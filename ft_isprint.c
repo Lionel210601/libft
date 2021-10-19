@@ -5,20 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:05:47 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 17:33:11 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:35:25 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:01:20 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if(c >= 32 && c <= 127)
-		return(1);
-	return(0);
+	if (c >= 32 && c <= 127)
+		return (1);
+	else
+		return (0);
 }
-//int main()
-//{
-//	printf("%d\n", ft_isprint(2));
-//}
+/*
+int main()
+{
+	int c;
+
+	c = 31;
+
+	printf("%d\n", ft_isprint(c));
+}*/

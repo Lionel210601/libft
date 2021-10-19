@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:02:41 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 17:34:50 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:31:30 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 16:57:45 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return(1);
-	return(0);
+		return (1);
+	else
+		return (0);
 }
-//int main()
-//{
-//	printf("%d\n", ft_isascii(2546));
-//}
-
+/*
+int main()
+{
+	printf("%d\n", ft_isascii(130));
+}*/

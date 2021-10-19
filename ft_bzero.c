@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 15:33:21 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/19 16:58:50 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:20:35 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 16:51:23 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (n != 0)
+		ft_memset(s, 0, ft_strlen(s));
 }
 /*
-int main()
+int main(void)
 {
-	int c = 'a';
-	printf("%d\n", ft_isdigit(c));
+	char	*s;
+	size_t	n = 0;
+
+	s = ft_strdup("saluuuuut");
+	printf("%s\n", bzero(s, 5));
 }*/

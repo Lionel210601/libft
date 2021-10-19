@@ -5,43 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 14:49:44 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/14 15:31:46 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 16:21:28 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:38:08 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	ft_strnstr( const char *foin, const char *aiguille, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t i;
 	size_t j;
 
 	j = 0;
-	if (foin[j] == '\0')
-		return(NULL);
-	if (aiguille[i] == '\0' || aiguille == NULL)
-		return((char*)foin);
-	while(aiguille[i] != '\0' && len > j && len < ft_strlen(foin))
+	i = 0;
+	if (haystack[j] == '\0')
+		return (NULL);
+	if (needle[i] == '\0' || needle == NULL)
+		return ((char*)haystack);
+	while (needle[i] != '\0' && len > j)
 	{
 		i = 0;
-		while(aiguille[i] == foin[j + i] && i + j < len)
+		while (needle[i] == haystack[j + i] && len > i + j && len < ft_strlen(haystack))
 		{
-			if (aiguille[i + 1] == '\0')
-				return((char*)foin + j);
+			if (needle[i + 1] == '\0')
+				return ((char*)haystack + j);
 			i++;
 		}
 		j++;
 	}
-	return(NULL);
+	return (NULL);
 }
+/*
 int main(void)
 {
-	const char *foin = "salle";
-	const char *aiguille = "salu";
-	size_t len = 6;
-
-	printf("%s\n", strnstr(foin, aiguille, len));
-	printf("%s\n", ft_strnstr(foin, aiguille, len));
-}
+	const char haystack[50] = "sa";
+	const char needle[50] = "sal";
+	//size_t len = 6;
+	
+	printf("%s\n", strnstr(haystack, needle, 6));
+	printf("%s\n", ft_strnstr(haystack, needle, 6));
+}*/

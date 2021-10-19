@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 15:33:21 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/19 16:58:50 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:46:24 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:15:48 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	char *pb;
+	unsigned char cc;
+
+	if (b == NULL)
+		return (NULL);
+	pb = b;
+	cc = (unsigned char) c;
+	while (len--)
+	{
+		*pb = cc;
+		pb ++;
+	}
+	return (b);
 }
 /*
 int main()
 {
-	int c = 'a';
-	printf("%d\n", ft_isdigit(c));
+	char *str;
+	int c = 'b';
+	size_t len = 2;
+	str = ft_strdup("salut");
+
+	printf("%s\n", str);
+	ft_memset(str, c, len);
+	printf("%s\n", str);
 }*/

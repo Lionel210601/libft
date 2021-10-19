@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 15:33:21 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/19 16:58:50 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 16:38:04 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:14:38 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (src < dst)
+	{
+		while (len >= 0)
+			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
+	}
+	if (src > dst)
+	{
+		ft_memcpy(dst, src, len);
+	}
+	return (dst);
 }
 /*
 int main()
 {
-	int c = 'a';
-	printf("%d\n", ft_isdigit(c));
+	char src[50] = "adieurichard";
+	char dst[50] = "salutcheu";
+	ft_memmove(dst, src, 20);
+	printf("%s\n", dst);
+	printf("%s\n", memmove(dst, src, 20));
 }*/
+

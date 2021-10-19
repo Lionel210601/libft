@@ -5,20 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:37:26 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 18:00:43 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 16:30:23 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:39:46 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	return(0);
+	return (0);
 }
-//int main()
-//{
-//	printf("%d\n", ft_toupper('B'));
-//}

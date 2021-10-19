@@ -5,39 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 15:19:20 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/14 11:19:05 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:59:33 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:23:55 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-size_t	ft_strlcpy(const char *src, char *dest, size_t dstsize)
+#include "libft.h"
+
+size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
 	size_t i;
 
 	i = 0;
 	if (dstsize <= 0)
 	{
-		while(src[i] != '\0' && i < (dstsize - 1))
+		while (src[i] != '\0' && i < (dstsize - 1))
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (0);
 }
+/*
 int main()
 {
-	const char *src = "zoubida";
-	char *dest = "zibkoafjigeoth";
-	size_t dstsize =  25;
+	const char *src = "helle";
+	char *dst = "hello";
+	size_t dstsize = 10;
 
-	printf("%zu\n", ft_strlcpy(src, dest, dstsize));
-	printf("%zu\n", strlcpy(dest, src, dstsize));
-}
-
+	printf("%zu\n", ft_strlcpy(dst, src, dstsize));
+	printf("%zu\n", strlcpy(dst, src, dstsize));
+}*/

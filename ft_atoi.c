@@ -5,44 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 13:51:47 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 13:12:33 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:13:19 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 15:19:51 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int res;
-	
+	size_t i;
+	size_t signe;
+	size_t result;
+
 	i = 0;
-	sign = 1;
-	res = 0;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == ' ')
+	signe = 1;
+	result = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
+			signe *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res *= 10;
-		res += str[i] - 48;
+		result = (str[i] - '0' + (result * 10));
 		i++;
 	}
-	return (res * sign);
+	return (result * signe);
 }
-//int main()
-//{
-//	char str[] = "-5465---/+kfduhgoheir";
-
-//	printf("%d\n", ft_atoi(str));
-//}
+/*
+int main()
+{
+	const char str[] = "-219";
+	printf("%d\n", ft_atoi(str));
+}*/

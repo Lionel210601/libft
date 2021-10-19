@@ -5,20 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 18:00:55 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 18:03:28 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 16:29:37 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:39:26 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int ft_tolower(int c)
 {
-	if( c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return(0);
+	if (c >= 'A' && c <= 'Z')
+		return (i + 32);
+	return (0);
 }
-//int main()
-//{
-//	printf("%d\n", ft_tolower('z'));
-//}
+

@@ -1,48 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 11:33:01 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/14 13:35:42 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:56:22 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:21:24 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-size_t ft_strlcat(char *dst,const char *src, size_t dstsize)
+size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
-	while (src[j] != '\0')
-	{
-		j++;
-	}
-	if (dstsize > 0)
-	{
-		i = 0;
-		while (src[i] != '\0' && i < (dstsize - 1))
-		{
-			dst[i] = src[j];
-			i++;
-		}
-		dst[i] = '\0';
-		}
-	return(j);
+	if (!dst || !src)
+		return (0);
+	while (i < ft_strlen(dst))
+		i++;
+	return (i + dstsize);
 }
+/*
 int main()
 {
-	char dst[] = "adieu";
-	char src[] = "salut";
-	size_t dstsize = 6;
-
+	char * restrict dst = "WORLD";
+	const char * restrict src = "HELLO";
+	size_t dstsize = 0;
 
 	printf("%zu\n", ft_strlcat(dst, src, dstsize));
-	printf("%lu\n", strlcat(dst, src, dstsize));
-}
+}*/

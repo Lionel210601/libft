@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 15:27:01 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 15:54:44 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 15:28:02 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 16:56:36 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	return(0);
+	else
+		return (0);
 }
+/*
 int main()
 {
-	char c = 'b';
+	int c = 'a';
 
 	printf("%d\n", ft_isalpha(c));
-}
-
+}*/

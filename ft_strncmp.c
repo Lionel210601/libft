@@ -5,32 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 13:11:16 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/12 12:57:59 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/19 16:18:31 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/19 17:38:18 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t c;
 
-	i = 0;
-	if ( n == i)
-		return(0);
-	while (s1[i] == s2[i] && i < n && s1[i] != '\0')
+	c = 0;
+	if (n == c)
+		return (0);
+	while (s1[c] == s2[c] && s1[c] != '\0' && c < n)
 	{
-		i++;
+		c++;
 	}
-	return (s1[i] - s2[i]);
+	return (s1[c] - s2[c]);
 }
+/*
 int main()
 {
-	size_t n = 24;
-	const char s1[] = "adieu";
-	const char s2[] = "adichard";
+	const char *s1 = "loh";
+	const char *s2 = "lloho";
+	size_t n = 1;
 
-	printf("%d\n",ft_strncmp(s1, s2, n));
-}
+	printf("%d\n", ft_strncmp(s1, s2, n));
+	printf("%d\n", strncmp(s1, s2, n));
+}*/
