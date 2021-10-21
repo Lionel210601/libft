@@ -6,7 +6,7 @@
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:20:35 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/19 16:51:23 by lwirth           ###   ########.fr       */
+/*   Updated: 2021/10/21 11:14:38 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (n != 0)
-		ft_memset(s, 0, ft_strlen(s));
+	ft_memset(s, 0, n);
 }
 /*
 int main(void)

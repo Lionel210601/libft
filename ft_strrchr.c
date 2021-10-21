@@ -6,7 +6,7 @@
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:27:21 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/19 17:39:05 by lwirth           ###   ########.fr       */
+/*   Updated: 2021/10/21 11:57:47 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	while ((*s) <= c)
+	int		i;
+	char	*zebi;
+
+	zebi = (char *)s;
+	i = ft_strlen(zebi);
+	while (i >= 0)
 	{
-		if ((*s) == c)
-			return ((char*)s);
-		s--;
+		if (zebi[i] == c)
+		{
+			return (&zebi[i]);
+		}
+		i--;
 	}
 	return (NULL);
 }

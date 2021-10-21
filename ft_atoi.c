@@ -6,7 +6,7 @@
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:13:19 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/19 15:19:51 by lwirth           ###   ########.fr       */
+/*   Updated: 2021/10/21 11:41:48 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t i;
-	size_t signe;
-	size_t result;
+	size_t	i;
+	size_t	signe;
+	size_t	result;
 
 	i = 0;
 	signe = 1;
