@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lwirth <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 15:13:19 by lwirth            #+#    #+#             */
-/*   Updated: 2021/10/29 13:36:58 by lwirth           ###   ########.fr       */
+/*   Created: 2021/10/29 14:31:12 by lwirth            #+#    #+#             */
+/*   Updated: 2021/10/29 14:32:29 by lwirth           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
-	size_t	signe;
-	size_t	result;
+	t_list	*block;
 
 	i = 0;
-	signe = 1;
-	result = 0;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	block = lst;
+	while (block != NULL)
 	{
-		if (str[i] == '-')
-			signe *= -1;
+		block = block->next;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = (str[i] - '0' + (result * 10));
-		i++;
-	}
-	return (result * signe);
+	return (i);
 }
-/*
-int main()
-{
-	const char str[] = "-219";
-	printf("%d\n", ft_atoi(str));
-}*/
